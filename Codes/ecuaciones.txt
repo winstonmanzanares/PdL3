@@ -1,0 +1,10 @@
+log(4*x)
+exp(a*x -1)/a
+exp(a/x)
+x^2 + -1
+sin(a*x+b)
+sin(x)^2
+0^2
+1*x
+sec(x)^5
+(sec(x)^5)/exp(a/x)
