@@ -12,7 +12,7 @@ from ecuaciones_matematicas_concurrente import procEcConTime
 
 
 # Cantidad de simulaciones
-N = 16  # Cada una lleva aproximadamente 1 minuto! Se recomienda usar valores bajos
+N = 32  # Cada una lleva aproximadamente 1 minuto! Se recomienda usar valores bajos
 poly_deg = 3  # Grado de ajuste polinómico
 
 # Hilo de onda de carga   -->   ˥ ˦ ˧ ˨ ˩                                     
@@ -26,7 +26,7 @@ def spinner(stop_event):
     sys.stdout.write("\rProcesamiento completo!       \n")
 
 
-def inicio():
+def graficaTiempos():
     stop_event = threading.Event()
     spinner_thread = threading.Thread(target=spinner, args=(stop_event,))
     spinner_thread.start()
@@ -81,4 +81,4 @@ def inicio():
 
 
 if __name__ == "__main__":
-    inicio()
+    graficaTiempos()
