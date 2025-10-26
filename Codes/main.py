@@ -1,3 +1,4 @@
+from Graficador_Tiempos_Procesamiento import graficaTiempos
 from Conteo_palabras_Secuencial import procesar_secuencial
 from Conteo_Palabras_Concurrente import procesar_concurrente
 from Ecuaciones_Matematicas_Secuenciales import procesar_ecuaciones
@@ -13,6 +14,7 @@ def menu():
 2- Conteo de palabras concurrente
 3- Ecuaciones secuenciales
 4- Ecuaciones concurrentes
+5- Gráfico de tiempos
 0- Salir
 ===========================================
 """)
@@ -26,6 +28,8 @@ def menu():
             procesar_ecuaciones()
         elif opcion == "4":
             procesar_ecuaciones_concurrente()
+        elif opcion == "5":
+            graficaTiempos()
         elif opcion == "0":
             print("Programa finalizado.")
             break
