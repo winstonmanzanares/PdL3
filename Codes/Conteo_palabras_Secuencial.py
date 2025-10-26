@@ -17,6 +17,40 @@ def count_words(filename):
     logger.debug(f"count_words de: {os.path.basename(filename)} demoró {fin - inicio:.5f}s")
     return os.path.basename(filename), len(palabras)
 
+
+
+########################################################################
+# Bloque de funciones similares a las originales pero sin el datalogger
+
+def silcount_words(filename):
+    """Silenciosamente cuenta las palabras, sin el logger"""
+    with open(filename, 'r', encoding='utf-8') as archivo:
+        contenido = archivo.read()
+
+    palabras = contenido.split()
+    return os.path.basename(filename), len(palabras)
+
+def procSecTime():
+    # Función interna que simplemente devuelve el tiempo de procesamiento como un float
+    directorio = os.getcwd()  # Usa el directorio actual
+    archivos = [os.path.join(directorio, f) for f in os.listdir(directorio) if f.endswith('.txt') and 'ecuaciones' not in f]
+
+    total_palabras = 0
+    inicio_total = time.time()
+
+    for archivo in archivos:
+        nombre_archivo, cantidad = silcount_words(archivo)
+        total_palabras += cantidad
+
+    fin_total = time.time()
+    return fin_total - inicio_total
+    
+
+########################################################################
+
+
+
+
 def procesar_secuencial():
     """Procesa todos los archivos del directorio de forma secuencial."""
     directorio = os.getcwd()  # Usa el directorio actual
